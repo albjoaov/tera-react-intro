@@ -5,7 +5,7 @@ const Todo = () => {
   const [todos, setTodos] = useState([]);
 
   // Data Binding
-  // const input = document.querySelector("[name='todo']")
+  // como faríamos no JS puro: const input = document.querySelector("[name='todo']")
   const inputText = useRef();
 
   // Ciclo de Vida
