@@ -1,14 +1,13 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Contador() {
-  const [contador, setContador] = useState(500);
+  const [contador, setContador] = useState(0);
 
   useEffect(() => {
     // O que será executado quando o evento for iniciado
     console.log("Componente iniciado");
     const intervalo = setInterval(() => {
-      setContador((valor) => valor - 1);
+      setContador((valor) => valor + 1);
     }, 1000);
     // Contar de um em um segundo (1000ms)
 
