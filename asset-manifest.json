@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/tera-react-intro/static/css/main.90f6920e.css",
-    "main.js": "/tera-react-intro/static/js/main.f7d39362.js",
+    "main.js": "/tera-react-intro/static/js/main.7837fbcb.js",
     "index.html": "/tera-react-intro/index.html",
     "main.90f6920e.css.map": "/tera-react-intro/static/css/main.90f6920e.css.map",
-    "main.f7d39362.js.map": "/tera-react-intro/static/js/main.f7d39362.js.map"
+    "main.7837fbcb.js.map": "/tera-react-intro/static/js/main.7837fbcb.js.map"
   },
   "entrypoints": [
     "static/css/main.90f6920e.css",
-    "static/js/main.f7d39362.js"
+    "static/js/main.7837fbcb.js"
   ]
 }
