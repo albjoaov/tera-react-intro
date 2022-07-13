@@ -1,0 +1,16 @@
+.agua {
+  width: 100px;
+  height: 100px;
+}
+
+.agua[data-temperatura="0"] {
+  background-color: blue;
+}
+
+.agua[data-temperatura="15"] {
+  background-color: cadetblue;
+}
+
+.agua[data-temperatura="100"] {
+  background-color: red;
+}

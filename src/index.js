@@ -1,17 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Todo from "./components/Todo";
-import Contador from "./components/Contador";
-import TrocaTema from "./components/TrocaTema";
+// import Todo from "./components/Todo";
+// import Contador from "./components/Contador";
+// import TrocaTema from "./components/TrocaTema";
+import EstadosAgua from "./components/Agua/EstadosAgua";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <Provedor> */}
-    <TrocaTema />
+    {/* <TrocaTema />
     <Contador />
-    <Todo />
+    <Todo /> */}
     {/* </Provedor> */}
+    <EstadosAgua />
   </React.StrictMode>
 );
