@@ -2,7 +2,6 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Agua from "./components/Agua";
 import Contador from "./components/Contador";
-import NavBar from "./components/NavBar/Navbar";
 import Todo from "./components/Todo";
 import TrocaTema from "./components/TrocaTema";
 import TemaProvider from "./components/TrocaTema/TemaContext";
