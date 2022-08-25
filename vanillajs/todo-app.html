@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Olá Mundo</h1>
+    <ul id="todos"></ul>
+    <form>
+      <input type="text" name="todo" />
+      <input type="submit" value="Adicionar novo TODO" />
+    </form>
+    <script>
+      // Buscar os elementos da DOM
+      const form = document.querySelector("form");
+      const input = document.querySelector("[name='todo']");
+      const todoList = document.querySelector("#todos");
+      const KEY_NAME = "todos";
+
+      /*
+        Aqui trabalhamos com:
+        - Gerenciamento de estado (criar comportamentos para a aplicação e gerenciá-los);
+        - Data Binding (ligação dos dados do JS com HTML)
+        - Eventos
+        - Ciclo de vida de maneira manual
+      */
+
+      // Ciclo de vida da aplicação
+      // Início da aplicação
+      // let todosDoLocalStorage = localStorage.getItem("todos");
+      // if (todosDoLocalStorage === null) {
+      //   todosDoLocalStorage = "[]";
+      // }
+      const todosDoLocalStorage = localStorage.getItem(KEY_NAME);
+      const todosExistentes = JSON.parse(todosDoLocalStorage) || [];
+      const todoData = [];
+
+      todosExistentes.forEach((todo) => {
+        addTodoNaDom(todo);
+      });
+
+      // Data binding
+      function addTodoNaDom(todoText) {
+        const li = document.createElement("li"); // criei o elemento no html
+        li.innerHTML = todoText; // atribuí o valor ao elemento (li)
+        todoList.appendChild(li); // incluí o elemento na DOM dentro da <ul>
+        todoData.push(todoText);
+        localStorage.setItem(KEY_NAME, JSON.stringify(todoData));
+        input.value = ""; // resetei o input
+      }
+
+      form.onsubmit = (event) => {
+        event.preventDefault();
+        addTodoNaDom(input.value);
+      };
+    </script>
+  </body>
+</html>
