@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const temas = {
   claro: {
@@ -21,20 +21,16 @@ const TemaContext = React.createContext(estadoInicial);
 const LOCAL_STORAGE_KEY_THEME = "theme";
 
 function TemaProvider({ children }) {
-  const [escuro, setEscuro] = useState(true);
+  const temaAtual = localStorage.getItem(LOCAL_STORAGE_KEY_THEME) === "true";
+  const [escuro, setEscuro] = useState(temaAtual);
 
-  useEffect(() => {
-    const ehEscuro = localStorage.getItem(LOCAL_STORAGE_KEY_THEME) === "true";
-    setEscuro(ehEscuro);
-  }, [escuro]);
+  const tema = escuro ? temas.escuro : temas.claro;
 
   const toggle = () => {
     const temaTrocado = !escuro;
     localStorage.setItem(LOCAL_STORAGE_KEY_THEME, JSON.stringify(temaTrocado));
     setEscuro(temaTrocado);
   };
-
-  const tema = escuro ? temas.escuro : temas.claro;
 
   // Construção de um alicerce para os valores providos para um componente filho
   return (
